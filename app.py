@@ -22,7 +22,7 @@ app.layout = html.Div(
         dbc.Row([
             dbc.Col(
                 [
-                    html.Img(src='assets/Bridges.jpg', width="1000", height="600")
+                    html.Img(src='assets/vystavka.jpg', width="1000", height="600")
                 ],  
                 width=12
             ),
