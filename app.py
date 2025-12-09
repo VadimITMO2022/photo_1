@@ -14,7 +14,7 @@ app.layout = html.Div(
          dbc.Row([
             dbc.Col(
                 [
-                    html.H1('My Dashboard')
+                    html.H1('My Dashboard. Hello.')
                 ],  
                 width=12
             ),
