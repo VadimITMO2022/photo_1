@@ -23,39 +23,7 @@ jobs:
             git config --global --add safe.directory ${{ secrets.PROJECT_DIR }} &&
             cd ${{ secrets.PROJECT_DIR }} &&
             git pull origin main &&
-            # 📂 Дополняем проект на локальной машине (VSCODE)
-
-В проекте создать папку `.github/workflows/`
-
-А в ней файл `deploy.yml` следующего содержимого:
-
-```yml
-name: Deploy
-
-on:
-  push:
-    branches: [ "main" ]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install SSH key
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Deploy
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} '
-            git config --global --add safe.directory ${{ secrets.PROJECT_DIR }} &&
-            cd ${{ secrets.PROJECT_DIR }} &&
-            git pull origin main &&
-            sudo systemctl restart dashapp 
+            sudo systemctl restart app-photo_1 
           '
             
           
